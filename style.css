@@ -12,7 +12,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
   height: 100vh;
   margin: 0;
   font-family: "Comfortaa", serif;
@@ -26,14 +26,14 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
 .click_me {
   font-weight: 400;
   font-style: normal;
   font-size: 2.25rem;
-  color: #222222;
+  color: #4d3738;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -65,22 +65,38 @@ main {
   }
 
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem);
   }
 }
 
 /* HTML: <div class="heart"></div> */
 .heart {
-  height: 200px;
-  /* adjust to control the size */
-  aspect-ratio: 1;
-  --_m: radial-gradient(#000 69%, #0000 70%) 84.5%/50%;
-  -webkit-mask-box-image: var(--_m);
-  mask-border: var(--_m);
-  clip-path: polygon(-41% 0, 50% 91%, 141% 0);
-  background: #cc333f;
+  position: relative;
+  width: 13.75rem; /* Increased size */
+  height: 12.5rem; /* Increased size */
   cursor: pointer;
   animation: pulse 1s infinite;
+  will-change: transform;
+}
+
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 6.875rem; /* Adjusted for increased size */
+  top: 0;
+  width: 6.875rem; /* Increased size */
+  height: 11.25rem; /* Increased size */
+  background: #cc333f;
+  border-radius: 6.875rem 6.875rem 0 0; /* Adjusted for increased size */
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
 }
 
 .heart.active {
@@ -120,7 +136,7 @@ main {
 }
 
 .heart_emoji {
-  font-size: 24px;
+  font-size: 1.5rem;
   position: fixed;
   top: -1vh;
   left: 0;
@@ -139,17 +155,17 @@ main {
 }
 
 .valentine {
-  width: 320px;
-  height: 420px;
+  width: 20rem;
+  height: 26.25rem;
   background: #f1f1f1ea;
   /* Adjusted for transparency */
-  border-radius: 10px;
+  border-radius: 0.625rem;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 12px;
-  box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem;
+  box-shadow: 0 0.25rem 5rem rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,19 +178,19 @@ main {
 .valentine::before,
 .valentine::after {
   content: "💖";
-  font-size: 24px;
+  font-size: 1.5rem;
   position: absolute;
   animation: float 3s ease-in-out infinite;
 }
 
 .valentine::before {
-  top: -10px;
-  left: -10px;
+  top: -0.625rem;
+  left: -0.625rem;
 }
 
 .valentine::after {
-  bottom: -10px;
-  right: -10px;
+  bottom: -0.625rem;
+  right: -0.625rem;
 }
 
 .valentine.active {
@@ -190,15 +206,15 @@ p {
   text-align: center;
   word-wrap: break-word;
   text-align: center;
-  font-size: 18px;
-  word-spacing: 0.5px;
+  font-size: 1.125rem;
+  word-spacing: 0.0313rem;
 }
 
 p.title {
   color: #f8878f;
-  font-size: 24px;
-  text-shadow: 2px 2px 20px #FFA5AB80;
-  margin-bottom: 7px;
+  font-size: 1.5rem;
+  text-shadow: 0.125rem 0.125rem 1.25rem #FFA5AB80;
+  margin-bottom: 0.4375rem;
 }
 
 @keyframes letterBounce {
@@ -209,7 +225,7 @@ p.title {
   }
 
   50% {
-    transform: translateY(-3px);
+    transform: translateY(-0.1875rem);
   }
 }
 
@@ -234,7 +250,7 @@ span.you:nth-child(2) {
   }
 
   50% {
-    transform: translateY(-3px);
+    transform: translateY(-0.1875rem);
   }
 }
 
