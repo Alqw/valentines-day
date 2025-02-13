@@ -144,7 +144,7 @@ main {
   background: #f1f1f1ea;
   /* Adjusted for transparency */
   border-radius: 10px;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
