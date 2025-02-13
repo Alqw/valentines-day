@@ -125,16 +125,6 @@ main {
   }
 }
 
-/* fallback until better support for mask-border */
-@supports not (-webkit-mask-box-image: var(--_m)) {
-  .heart {
-    mask:
-      radial-gradient(at 70% 31%, #000 29%, #0000 30%),
-      radial-gradient(at 30% 31%, #000 29%, #0000 30%),
-      conic-gradient(#000 0 0) bottom/100% 50% no-repeat;
-  }
-}
-
 .heart_emoji {
   font-size: 1.5rem;
   position: fixed;
