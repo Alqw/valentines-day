@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Pacifico&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  background: #FFA5AB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  height: 100vh;
+  margin: 0;
+  font-family: "Comfortaa", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.heart_body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.click_me {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.25rem;
+  color: #222222;
+  animation: float 3s ease-in-out infinite;
+}
+
+.click_me.active {
+  animation: disappear 2s forwards ease;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* HTML: <div class="heart"></div> */
+.heart {
+  height: 200px;
+  /* adjust to control the size */
+  aspect-ratio: 1;
+  --_m: radial-gradient(#000 69%, #0000 70%) 84.5%/50%;
+  -webkit-mask-box-image: var(--_m);
+  mask-border: var(--_m);
+  clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+  background: #cc333f;
+  cursor: pointer;
+  animation: pulse 1s infinite;
+}
+
+.heart.active {
+  animation: flyAway 2s forwards ease;
+}
+
+@keyframes flyAway {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    transform: translateY(-100vh) scale(0.5);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* fallback until better support for mask-border */
+@supports not (-webkit-mask-box-image: var(--_m)) {
+  .heart {
+    mask:
+      radial-gradient(at 70% 31%, #000 29%, #0000 30%),
+      radial-gradient(at 30% 31%, #000 29%, #0000 30%),
+      conic-gradient(#000 0 0) bottom/100% 50% no-repeat;
+  }
+}
+
+.heart_emoji {
+  font-size: 24px;
+  position: fixed;
+  top: -1vh;
+  left: 0;
+  animation: fall 3s ease-in;
+}
+
+@keyframes fall {
+
+  0% {
+    transform: translateY(-10vh);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.valentine {
+  width: 320px;
+  height: 420px;
+  background: #f1f1f1ea;
+  /* Adjusted for transparency */
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px;
+  box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transform: translate(-50%, 100%);
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.valentine::before,
+.valentine::after {
+  content: "💖";
+  font-size: 24px;
+  position: absolute;
+  animation: float 3s ease-in-out infinite;
+}
+
+.valentine::before {
+  top: -10px;
+  left: -10px;
+}
+
+.valentine::after {
+  bottom: -10px;
+  right: -10px;
+}
+
+.valentine.active {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+p {
+  color: #6d5052;
+  font-family: "Pacifico", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  word-wrap: break-word;
+  text-align: center;
+  font-size: 18px;
+  word-spacing: 0.5px;
+}
+
+p.title {
+  color: #f8878f;
+  font-size: 24px;
+  text-shadow: 2px 2px 20px #FFA5AB80;
+  margin-bottom: 7px;
+}
+
+@keyframes letterBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+span.you {
+  display: inline-block;
+  animation: letterBounce 2s ease-in-out infinite;
+}
+
+span.you:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+span.you:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+@keyframes letterBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.iloveyou span {
+  display: inline-block;
+  animation: letterBounce 2s ease-in-out infinite;
+}
+
+.iloveyou span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.iloveyou span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.iloveyou span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.iloveyou span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.iloveyou span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.iloveyou span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.iloveyou span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.iloveyou span:nth-child(8) {
+  animation-delay: 0.7s;
+}
+
+.iloveyou span:nth-child(9) {
+  animation-delay: 0.8s;
+}
+
+.iloveyou span:nth-child(10) {
+  animation-delay: 0.9s;
+}
+
+.iloveyou span:nth-child(11) {
+  animation-delay: 1.0s;
+}
+
+.iloveyou span:nth-child(12) {
+  animation-delay: 1.1s;
+}
