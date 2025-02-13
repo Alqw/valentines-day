@@ -7,6 +7,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+html, body {
+  height: 100%;
+}
+
 main {
   background: #FFA5AB;
   display: flex;
@@ -14,7 +18,7 @@ main {
   align-items: center;
   flex-direction: column;
   gap: 1.5rem;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   font-family: "Comfortaa", serif;
   font-optical-sizing: auto;
@@ -152,8 +156,8 @@ main {
 }
 
 .valentine {
-  width: 20rem;
-  height: 26.25rem;
+  width: 20rem !important;
+  height: 26.25rem !important;
   background: #f1f1f1ea;
   /* Adjusted for transparency */
   border-radius: 0.625rem;
@@ -161,7 +165,7 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 0.75rem;
+  padding: 0.75rem !important;
   box-shadow: 0 0.25rem 5rem rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
