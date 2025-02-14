@@ -1,8 +1,3 @@
-viewportUnitsBuggyfill.init({
-  force: true, // use for debug on desktop
-  refreshDebounceWait: 300, // good for performance
-});
-
 let hearts_active = false;
 
 const heart_element = document.querySelector(".heart");
